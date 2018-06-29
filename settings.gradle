@@ -1,0 +1,15 @@
+include ':ijoou_en'
+include ':ijoou_cn'
+include ':RTbs'
+include ':RJpush'
+
+include ':RLibrary:uiview'
+include ':RLibrary:library'
+include ':RLibrary:github'
+
+include ':RLibrary:rcode'
+include ':RLibrary:zxingzbar'
+
+include ':RLibrary:ucrop'
+
+

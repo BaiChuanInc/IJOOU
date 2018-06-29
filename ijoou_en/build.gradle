@@ -1,0 +1,25 @@
+apply from: '../RLibrary/key.gradle'
+
+def apkTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+def apk_time = apkTime()
+
+android {
+    /*Gradle3.0 以上的方法*/
+    applicationVariants.all { variant ->
+        if (variant.buildType.name != "debug") {
+            variant.getPackageApplication().outputDirectory = new File(project.rootDir.absolutePath + "/apk")
+        }
+        variant.getPackageApplication().outputScope.apkDatas.forEach { apkData ->
+            apkData.outputFileName = project.name + "-" +
+                    variant.versionName + "_" +
+                    apk_time + "_" +
+                    variant.flavorName + "_" +
+                    variant.buildType.name + "_" +
+                    variant.signingConfig.name +
+                    ".apk"
+        }
+    }
+}
