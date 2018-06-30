@@ -57,17 +57,20 @@ class HomeUIView : BaseRecyclerUIView<HomeTopBean, HomeDataBean, String>() {
             datas.add(HomeDataBean())
         }
 
-        resetUI()
-        showContentLayout()
-        if (page == 1) {
-            mExBaseAdapter.resetHeaderData(headerDatas)
-            mExBaseAdapter.resetAllData(datas)
+        post {
+            resetUI()
+            showContentLayout()
+            if (page == 1) {
+                mExBaseAdapter.resetHeaderData(headerDatas)
+                mExBaseAdapter.resetAllData(datas)
 
-            if (datas.size > 20) {
-                mExBaseAdapter.isEnableLoadMore = true
+                if (datas.size > 5) {
+                    mExBaseAdapter.isEnableLoadMore = true
+                }
+            } else {
+                mExBaseAdapter.appendAllData(datas)
             }
-        } else {
-            mExBaseAdapter.appendAllData(datas)
+
         }
     }
 

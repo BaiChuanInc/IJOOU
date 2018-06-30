@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <com.angcyo.uiview.container.UILayoutImpl
         android:id="@+id/base_sub_layout_impl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="60dp"/>
+        android:layout_marginBottom="60dp" />
 
     <com.angcyo.uiview.viewgroup.RTabLayout
         android:id="@+id/base_tab_layout"
@@ -22,9 +22,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:scaleType="center"
+            android:padding="@dimen/base_ldpi"
+            android:scaleType="centerInside"
             android:src="@mipmap/ic_launcher"
-            app:r_layout_width="0.3pw"/>
+            app:r_layout_width="0.3pw" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -32,19 +33,18 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="居中Item文本"
-            app:r_layout_width="0.4pw"/>
+            app:r_layout_width="0.4pw" />
 
         <com.angcyo.uiview.widget.TouchMoveView
             android:id="@+id/aaa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="center"
             app:r_image_normal="@mipmap/ic_launcher"
             app:r_image_selected="@mipmap/ic_launcher"
             app:r_layout_width="0.3pw"
             app:r_max_draw_offset="3dp"
             app:r_text_normal="联系人"
-            app:r_text_selected="联系人"/>
+            app:r_text_selected="联系人" />
 
     </com.angcyo.uiview.viewgroup.RTabLayout>
 
